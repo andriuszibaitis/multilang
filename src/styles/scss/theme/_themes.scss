@@ -1,0 +1,22 @@
+$themes: (
+    light: (
+        backgroundColor: $lightBackground,
+        linkColor: $lightLink,
+        linkFocus: $lightFocus,
+        featureColor: $lightFeature,
+        featureBackupColor: $lightFeatureBackup,
+        footerGradient: $lightFooter,
+        seeAllColor: $lightSeeAll,
+        inputBackground: $lightInputBackground,
+    ),
+    dark: (
+        backgroundColor: $darkBackground,
+        linkColor: $darkLink,
+        linkFocus: $darkFocus,
+        featureColor: $darkFeature,
+        featureBackupColor: $darkFeatureBackup,
+        footerGradient: $darkFooter,
+        seeAllColor: $darkSeeAll,
+        inputBackground: $darkInputBackground,
+    ),
+);

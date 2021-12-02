@@ -1,0 +1,71 @@
+$thin: 100;
+$light: 300;
+$regular: 400;
+$medium: 500;
+$semibold: 600;
+$bold: 700;
+$extrabold: 800;
+$black: 900;
+
+$roboto: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+$montserrat: 'Montserrat', 'Helvetica', 'Arial', sans-serif;
+
+.pageTitle {
+    font-weight: $bold;
+    font-size: 36px;
+    line-height: 44px;
+    letter-spacing: -1.12px;
+    margin: 30px 0;
+    @include md {
+        font-size: 48px;
+        line-height: 58px;
+        letter-spacing: -1.5px;
+        margin: 55px 0 50px;
+    }
+    @include themed {
+        color: t(linkColor);
+    }
+}
+
+h2 {
+    font-weight: $bold;
+    font-size: 24px;
+    line-height: 29px;
+    letter-spacing: -0.75px;
+    @include md {
+        font-size: 36px;
+        line-height: 44px;
+        letter-spacing: -1.12px;
+    }
+    @include themed {
+        color: t(linkColor);
+    }
+}
+
+// Import fonts from /static/fonts folder
+@mixin font-weight($name, $weight: '') {
+    $space-weight: ' ' + $weight;
+    $dash-weight: '-' + $weight;
+
+    @if $weight== '' {
+        $space-weight: '';
+        $dash-weight: '';
+    }
+    @font-face {
+        font-family: unquote($name) + $space-weight;
+        font-display: swap;
+        src: url('/../../fonts/' + $name + $dash-weight + '.woff2') format('woff2'),
+            url('/../../fonts/' + $name + $dash-weight + '.woff') format('woff'),
+            url('/../../fonts/' + $name + $dash-weight + '.ttf') format('truetype');
+    }
+}
+@mixin font($name) {
+    @include font-weight($name);
+    @include font-weight($name, 'black');
+    @include font-weight($name, 'bold');
+    @include font-weight($name, 'light');
+    @include font-weight($name, 'thin');
+}
+
+// Include your fonts here, i.e.:
+// @include font('awconqueror');

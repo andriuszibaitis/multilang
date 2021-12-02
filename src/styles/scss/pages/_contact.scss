@@ -1,0 +1,63 @@
+.formContainer {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.contactForm {
+    width: 100%;
+    max-width: 650px;
+    .inputRoot {
+        margin-bottom: 15px;
+        @include themed {
+            background-color: t(inputBackground);
+        }
+        .inputLabel {
+            font-family: $montserrat;
+            font-weight: $regular;
+            font-size: 16px;
+            line-height: 24px;
+            @include themed {
+                color: t(seeAllColor);
+            }
+        }
+        .inputBaseRoot {
+            border-radius: 3px;
+            font-family: $montserrat;
+            font-weight: $regular;
+            font-size: 16px;
+            line-height: 24px;
+            background-color: transparent;
+            @include themed {
+                color: t(linkColor);
+            }
+            &:before {
+                border-bottom: 0;
+            }
+            &:hover:not(.inputDisabled):before {
+                @include themed {
+                    border-bottom: 1px solid t(seeAllColor);
+                }
+            }
+            &:after {
+                @include themed {
+                    border-bottom: 1px solid t(linkColor);
+                }
+            }
+        }
+    }
+    .sendButton {
+        font-family: $montserrat;
+        font-weight: $semibold;
+        font-size: 14px;
+        line-height: 24px;
+        letter-spacing: 0.5px;
+        height: 45px;
+        max-width: 155px;
+        border-radius: 3px;
+        transition: none;
+        @include themed {
+            color: t(seeAllColor);
+            background-color: t(inputBackground);
+        }
+    }
+}

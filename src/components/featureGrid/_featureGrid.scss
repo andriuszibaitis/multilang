@@ -1,0 +1,66 @@
+$featureGridSpacing: 7.5px;
+$featureHorizontalPadding: 20px;
+
+.starterFeatures {
+    display: flex;
+    flex-direction: column;
+    max-width: 900px;
+    margin-top: 40px;
+    .starterIntro {
+        font-weight: $semibold;
+        font-size: 24px;
+        line-height: 29px;
+        color: #ffffff;
+        letter-spacing: -0.33px;
+        margin-bottom: 24px;
+    }
+    .featureGrid {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -$featureGridSpacing;
+    }
+    .featureCard {
+        width: 100%;
+        @include md {
+            width: calc(100% / 2 - 2 * #{$featureGridSpacing} - 2 * #{$featureHorizontalPadding});
+        }
+        @include lg {
+            width: calc(100% / 3 - 2 * #{$featureGridSpacing} - 2 * #{$featureHorizontalPadding});
+        }
+        margin: $featureGridSpacing;
+        display: flex;
+        align-items: center;
+        padding: 13px $featureHorizontalPadding;
+        border-radius: 10px;
+        @include themed {
+            background-color: t(featureBackupColor);
+        }
+        @supports ((-webkit-backdrop-filter: blur(50px)) or (backdrop-filter: blur(50px))) {
+            @include themed {
+                background-color: t(featureColor);
+            }
+            -webkit-backdrop-filter: blur(2em);
+            backdrop-filter: blur(2em);
+        }
+        svg {
+            min-width: 30px;
+            margin-right: 10px;
+        }
+        .featureTitle {
+            font-weight: $semibold;
+            font-size: 14px;
+            line-height: 18px;
+            color: #ffffff;
+            letter-spacing: -0.44px;
+            margin: 0;
+        }
+        .featureDescription {
+            font-weight: $regular;
+            font-size: 12px;
+            line-height: 15px;
+            color: #ffffff;
+            letter-spacing: -0.38px;
+            margin: 0;
+        }
+    }
+}

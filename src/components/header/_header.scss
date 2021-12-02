@@ -1,0 +1,66 @@
+header {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: none !important;
+    transition-duration: 300ms !important;
+    transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1) !important;
+    @include themed {
+        color: t(linkColor);
+        background-color: t(backgroundColor);
+    }
+    &.transparent {
+        background-color: transparent;
+        color: #ffffff;
+    }
+}
+
+nav {
+    display: flex;
+    margin: 20px 0;
+    align-items: center;
+    width: 100%;
+    @include lg {
+        max-width: $siteWidth;
+    }
+    &.fixedNav {
+        width: calc(100% - 2 * #{$sitePadding});
+    }
+    .navLHS {
+        flex: 1;
+        display: flex;
+        justify-content: flex-start;
+        margin: -$materialPadding;
+    }
+    .navRHS {
+        flex: 1;
+        display: flex;
+        justify-content: flex-end;
+        margin: -$materialPadding;
+    }
+    .navLogo {
+        max-width: 75px;
+        max-height: 75px;
+        @include themed {
+            color: t(linkColor);
+        }
+        svg {
+            max-width: 75px;
+            max-height: 75px;
+        }
+    }
+    .navIconButton:hover {
+        @include themed {
+            background-color: t(linkFocus);
+        }
+    }
+}
+
+.navPopper {
+    .navTooltip {
+        @include themed {
+            color: t(backgroundColor);
+            background-color: t(linkColor);
+        }
+    }
+}

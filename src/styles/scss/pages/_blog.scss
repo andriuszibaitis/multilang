@@ -1,0 +1,113 @@
+$gridSpacing: 10px;
+
+.blogGrid {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -$gridSpacing;
+}
+
+.blogCard {
+    width: 100%;
+    @include breakpoint(600px) {
+        width: calc(100% / 2 - 2 * #{$gridSpacing});
+    }
+    @include breakpoint(800px) {
+        width: calc(100% / 3 - 2 * #{$gridSpacing});
+    }
+    @include breakpoint(1100px) {
+        width: calc(100% / 4 - 2 * #{$gridSpacing});
+    }
+    max-height: 470px;
+    margin: $gridSpacing;
+    @include themed {
+        color: t(linkColor);
+        border-color: t(linkColor);
+        background-color: t(backgroundColor);
+    }
+    .card {
+        position: relative;
+        border-radius: 10px;
+        height: 470px;
+        .cardImage {
+            height: 100%;
+            img {
+                border-radius: 10px;
+            }
+        }
+        .cardTitle {
+            position: absolute;
+            color: #ffffff;
+            bottom: 0;
+            padding: 20px 25px;
+            font-weight: $semibold;
+            font-size: 18px;
+            line-height: 22px;
+            letter-spacing: -0.56px;
+        }
+    }
+}
+
+.blogPost {
+    position: relative;
+    background-color: transparent !important;
+    @include themed {
+        color: t(linkColor);
+    }
+    .postImage {
+        min-height: 380px;
+        max-height: 680px;
+        border-radius: 10px;
+        img {
+            border-radius: 10px;
+        }
+    }
+    .postTitle {
+        font-weight: $semibold;
+        font-size: 24px;
+        line-height: 29px;
+        letter-spacing: -0.75px;
+        margin: 35px 0;
+        @include md {
+            font-size: 36px;
+            line-height: 44px;
+            letter-spacing: -1.12px;
+            margin: 55px 0 40px;
+        }
+    }
+    .postContent {
+        max-width: 690px;
+        margin: 0 auto;
+        padding: 0;
+        font-weight: $regular;
+        font-size: 18px;
+        line-height: 28px;
+        letter-spacing: -0.56px;
+        @include md {
+            font-size: 21px;
+            line-height: 32px;
+            letter-spacing: -0.66px;
+        }
+    }
+    .postDate {
+        font-size: 14px;
+        line-height: 20px;
+        letter-spacing: 0;
+        justify-content: flex-end;
+        display: flex;
+    }
+    .backButton {
+        border-radius: 15px;
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        font-family: $montserrat;
+        text-transform: inherit;
+        @include themed {
+            color: t(linkColor);
+            background-color: t(backgroundColor);
+        }
+        .backButtonIcon {
+            margin-right: 0;
+        }
+    }
+}

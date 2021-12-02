@@ -1,0 +1,54 @@
+footer {
+    display: flex;
+    max-width: $contentWidth;
+    margin: 150px auto 30px;
+    flex-direction: column;
+    hr {
+        height: 1px;
+        width: 100%;
+        border: none;
+        margin: 3px 0 25px;
+        @include themed {
+            background-image: t(footerGradient);
+        }
+    }
+    .footerCredits {
+        display: flex;
+        font-size: 14px;
+        align-items: center;
+        letter-spacing: 0.5px;
+        flex-direction: column;
+        @include md {
+            width: 100%;
+            flex-direction: row;
+            justify-content: center;
+        }
+        .dash {
+            display: none;
+            @include md {
+                display: flex;
+            }
+        }
+        .madeBy {
+            display: flex;
+            margin-top: 15px;
+            align-items: center;
+            @include themed {
+                color: t(linkColor);
+            }
+            text-decoration: none;
+            @include md {
+                margin: 0;
+            }
+            &:hover,
+            &:focus {
+                // color: lighten($lightBlack, 30%);
+            }
+            .charbzLogo {
+                width: 50px;
+                height: 16px;
+                margin-left: 5px;
+            }
+        }
+    }
+}

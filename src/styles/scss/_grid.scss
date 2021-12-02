@@ -1,0 +1,29 @@
+$siteWidth: 1400px;
+$sitePadding: 24px;
+$materialPadding: 12px;
+$contentWidth: 1200px;
+
+body {
+    overflow-x: hidden;
+    font-family: $montserrat;
+    max-width: $siteWidth;
+    padding: 0 $sitePadding;
+    margin: 0 auto;
+    @include themed {
+        color: t(linkColor);
+        background-color: t(backgroundColor);
+    }
+}
+
+.content {
+    max-width: $contentWidth;
+    margin: 0 auto;
+}
+
+%materialHover {
+    &:hover {
+        @include themed {
+            background-color: t(linkFocus);
+        }
+    }
+}
